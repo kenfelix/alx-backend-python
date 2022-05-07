@@ -10,11 +10,12 @@ from utils import access_nested_map
 class TestAccessNestedMap(unittest.TestCase):
     """TestAccessNestedMap class"""
     @parameterized.expand([
-        ({"a": a}, ("a",), 3),
-        ({"a": {"b": 2}}, ("a",), {"b": 2}),
+        ({"a": 1}, ("a",), 1),
+        ({"a": {"b": 2}}, ("a",), {'b': 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
     def test_access_nested_map(self, map, path, expected_output):
         """returns the expected output"""
-        self.assertEqual(access_nested_map(map, path), expected_output)
+        real_output = access_nested_map(map, path)
+        self.assertEqual(real_output, expected_output)
 
