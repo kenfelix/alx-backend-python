@@ -11,6 +11,7 @@ from utils import access_nested_map, get_json, memoize
 
 class TestAccessNestedMap(unittest.TestCase):
     """TestAccessNestedMap class"""
+    
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {'b': 2}),
@@ -34,6 +35,7 @@ class TestAccessNestedMap(unittest.TestCase):
         
 class TestGetJson(unittest.TestCase):
     """TestGetJson class"""
+    
     @parameterized.expand([
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False}),
@@ -48,6 +50,7 @@ class TestGetJson(unittest.TestCase):
         
 class TestMemoize(unittest.TestCase):
     """ test with memoize """
+    
     def test_memoize(self):
         """ Ttest assert_called_once
         """
